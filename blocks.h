@@ -3,7 +3,7 @@ static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
 	{"Mem:", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
 
-	{"", "acpi | awk '{print $3, $4}' | sed s/Discharging,/Bat/;s/([0-9]{2}%).*/\1/",					300,		0},
+	{"", "acpi | awk '{print $3, substr($4,1,3)}' | sed s/Discharging,/Bat/",					300,		0},
 	{"", "date '+%b-%d [%a] %I:%M%p'",					60,		0},
 };
 
