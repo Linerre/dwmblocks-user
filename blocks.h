@@ -1,13 +1,11 @@
 //Modify this file to change what commands output to your statusbar, and recompile using the make command.
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
-	{" ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
-	{"", "~/.local/bin/wifi",	60,		0},
-
-	/*{"", "acpi | awk '{print $3, substr($4,1,3)}' | sed 's/Discharging,//;s/Charging,//'",	300,		0},*/
-	{"", "~/.local/bin/battery",	240,	0},
-	{"", "~/.local/bin/volume",	0,	11},
-	{"", "date '+%b-%d %a %I:%M%p'",	60,		0},
+	{"", "~/.local/bin/sb-memory",	30,		0},
+	{"", "~/.local/bin/sb-wifi",	60,		0},
+	{"", "~/.local/bin/sb-battery",	240,	0},
+	{"", "~/.local/bin/sb-volume",	0,	11},
+	{"", "~/.local/bin/sb-clock",	60,		0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
